@@ -10,7 +10,8 @@ router.register('facultyapi', views.facultyViewset , basename= 'faculty_val')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-     path('studentapi/', views.StudentListCreate.as_view()),
+    path('studentapi/', views.StudentListCreate.as_view()),
     path('studentapi/<int:rollnumber>', views.StudentRetrieveUpdate.as_view()),
-    path('', include(router.urls))
+    path('', include(router.urls)),
+    path('facultylogin/',views.LoginView.as_view(), name='login')
 ] + static(settings.MEDIA_URL , document_root = settings.MEDIA_ROOT)
